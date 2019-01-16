@@ -18,12 +18,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+PRODUCTION = os.environ.get('PRODUCTION', False)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gmaoot(b=t8dom72m6h9&8b2c1)#cnlxlkh9*%l$h++z#9tj01'
+if PRODUCTION:
+    SECRET_KEY = os.environ.get('CUSTOM_SECRET_KEY')
+else:
+    SECRET_KEY = 'gmaoot(b=t8dom72m6h9&8b2c1)#cnlxlkh9*%l$h++z#9tj01'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if PRODUCTION:
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -74,13 +82,24 @@ WSGI_APPLICATION = 'personal_website_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if PRODUCTION:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ.get('POSTGRESQL_ADDON_DB'),
+            'USER': os.environ.get('POSTGRESQL_ADDON_USER'),
+            'PASSWORD': os.environ.get('POSTGRESQL_ADDON_PASSWORD'),
+            'HOST': os.environ.get('POSTGRESQL_ADDON_HOST'),
+            'PORT': os.environ.get('POSTGRESQL_ADDON_PORT'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation

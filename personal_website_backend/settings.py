@@ -33,7 +33,7 @@ if PRODUCTION:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://app-b5a7a9ab-0d90-4813-8e53-3135ff2dd5c8.cleverapps.io/"]
 
 
 # Application definition

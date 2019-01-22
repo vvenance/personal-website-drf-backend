@@ -43,5 +43,11 @@ $ curl --header "Content-Type: application/json" \
  --data '{"key":"value"}' \
  http://127.0.0.1:8000/entries/
  ```
+ 
+ ### What you must check
+ 
+ Use the same env var names as I do in settings.py, or overrride them to use custom var names
+ By default the ALLOWED_HOSTS value is set to everything (\*), make sure this is the behaviour you want or override it in settings.py .
+ 
 
 Happy coding !

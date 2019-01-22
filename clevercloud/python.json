@@ -1,0 +1,1 @@
+{ "deploy": { "managetasks": [ "makemigrations personal_website_backend", "migrate personal_website_backend" ]}}

@@ -1,1 +1,10 @@
-{ "deploy": { "managetasks": [ "makemigrations personal_website_backend", "migrate personal_website_backend", "migrate" ]}}
+{
+    "build": {
+        "cache_dependancies": true
+    },
+    "deploy": {
+        "managetasks": [
+            "migrate"
+        ]
+    }
+}

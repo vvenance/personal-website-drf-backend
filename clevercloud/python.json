@@ -4,6 +4,7 @@
     },
     "deploy": {
         "managetasks": [
+            "collectstatic --noinput",
             "migrate"
         ]
     }

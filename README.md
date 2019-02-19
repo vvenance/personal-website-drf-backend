@@ -21,6 +21,7 @@ An article describes how this project should be used. You can find it on [Clever
 - `$ source env/bin/activate`  (On Windows use `env\Scripts\activate`)
 - `$ pip install r requirements.txt`
 - `$ python manage.py migrate`
+- `$ python manage.py collectstatic`
 - `$ python manage.py runserver`
 
 You can try your new local application by visiting http://127.0.0.1:8000/ on your favorite browser
@@ -99,6 +100,8 @@ clever env set CUSTOM_SECRET_KEY "your_custom_secret_key"
 clever env set PRODUCTION "True"
 clever env set PORT "8080"
 clever env set CC_PYTHON_MODULE "project.wsgi:application"
+clever env set STATIC_FILES_PATH "static/"
+clever env set STATIC_URL_PREFIX "/static"
 clever env set PYTHON_BACKEND "uwsgi"
 ```
 
@@ -120,7 +123,7 @@ If deployement failed with some error like :
 django.db.utils.OperationalError: could not translate host name "XXXXXXXXXX-postgresql.services.clever-cloud.com" to address: Name or service not known
 ```
 
-It only means that you deployed too quickly after creating the PG add-on and name propagation has not yet been done. Wait a bit and try again later.
+It only means that you deployed too quickly after creating the PG add-on and name propagation has not yet been done. Wait a bit and try again later with `clever restart`.
 
 ### URL
 

@@ -98,7 +98,7 @@ You need to setup some Environment variables accordingly to your `settings.py` :
 clever env set CUSTOM_SECRET_KEY "your_custom_secret_key"
 clever env set PRODUCTION "True"
 clever env set PORT "8080"
-clever env set CC_PYTHON_MODULE "personal_website_backend.wsgi:application"
+clever env set CC_PYTHON_MODULE "project.wsgi:application"
 clever env set PYTHON_BACKEND "uwsgi"
 ```
 

@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from personal_website_backend.personal_website_backend import views
+from app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

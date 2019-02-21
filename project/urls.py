@@ -1,4 +1,4 @@
-"""personal_website_backend URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from personal_website_backend import views
+from app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

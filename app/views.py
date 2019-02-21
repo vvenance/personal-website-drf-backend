@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from .models import *
 from rest_framework import viewsets
-from personal_website_backend.personal_website_backend.serializers import UserSerializer, GroupSerializer, EntrySerializer
+from .serializers import UserSerializer, GroupSerializer, EntrySerializer
 from rest_framework import permissions
 
 # Create your views here.

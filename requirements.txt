@@ -1,4 +1,4 @@
-Django==1.11.18
+django>=1.11.19
 djangorestframework==3.9.0
 psycopg2>=2.7 --no-binary psycopg2
 pytz==2018.9
